@@ -23,8 +23,12 @@ function CategoryScreen({ navigation }) {
 
   
   const [categories,setCategories]=useState([]);
-  
 
+  useEffect(() => {
+
+    fillData();
+   
+  }, [])
 
   const fillData=()=>{
     //HTTP GET
