@@ -43,7 +43,22 @@ function CategoryScreen({ navigation }) {
   }
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFFFF'}}>
+
+      <ScrollView >
+          {
+            categories.map((item)=> (
+
+              <ListItem style={{flex:6}}>
+                <ListItem.Content style={styles.categories} >
+                  <ListItem.Title style={{color:"white"}}>{item.name}</ListItem.Title>
+                  <ListItem.Subtitle style={{color:"white"}}>Quantity Per Unit: {item.description}</ListItem.Subtitle>
+                </ListItem.Content>               
+              </ListItem>
+            
+            ))
+          }
+      </ScrollView>
       
 
     </View>
@@ -168,4 +183,10 @@ padding:5,
 borderRadius:10,
     backgroundColor:"blue"
   },
+  categories:{
+    flex:5,
+    padding:5,
+    borderRadius:10,
+    backgroundColor:"red"
+  }
 });
