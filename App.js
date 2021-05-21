@@ -42,6 +42,21 @@ function CategoryScreen({ navigation }) {
    })
   }
 
+      //DELETE METHOD
+  const deleteCategories=(id)=>{
+            let requestoptions={
+        method:'DELETE',
+        body:JSON.stringify({id:id})
+        }
+        fetch('https://northwind.vercel.app/api/categories/'+id,requestoptions)
+        .then((res)=>res.json())
+        .then((data)=>{
+            
+            fillData();
+        })
+        }
+  
+
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFFFF'}}>
 
@@ -53,7 +68,11 @@ function CategoryScreen({ navigation }) {
                 <ListItem.Content style={styles.categories} >
                   <ListItem.Title style={{color:"white"}}>{item.name}</ListItem.Title>
                   <ListItem.Subtitle style={{color:"white"}}>Quantity Per Unit: {item.description}</ListItem.Subtitle>
-                </ListItem.Content>               
+                </ListItem.Content>  
+
+                <ListItem.Content style={{flex:1}} >
+                  <Icon name="delete"  onPress={()=>deleteCategories(item.id)}/>
+                </ListItem.Content>             
               </ListItem>
             
             ))
@@ -184,8 +203,9 @@ borderRadius:10,
     backgroundColor:"blue"
   },
   categories:{
-    flex:5,
+    flex:4,
     padding:5,
+    marginLeft:20,
     borderRadius:10,
     backgroundColor:"red"
   }
