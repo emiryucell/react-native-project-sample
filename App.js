@@ -20,11 +20,14 @@ function OrderScreen({ navigation }) {
 }
 
 function CategoryScreen({ navigation }) {
+
+  const [categories,setCategories]=useState([]);
+
+  
+
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>CATEGORIES!</Text>
-
-      <Button color="tomato" title="TIKLAAA" ></Button>
+      
 
     </View>
   );
