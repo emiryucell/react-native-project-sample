@@ -20,11 +20,27 @@ function OrderScreen({ navigation }) {
 }
 
 function CategoryScreen({ navigation }) {
+
+  
+  const [categories,setCategories]=useState([]);
+  
+
+
+  const fillData=()=>{
+    //HTTP GET
+    fetch('https://northwind.vercel.app/api/categories/')
+   .then((res)=>res.json())
+   .then((data)=> {
+  
+    
+   setCategories(data);
+           
+   })
+  }
+
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>CATEGORIES!</Text>
-
-      <Button color="tomato" title="TIKLAAA" ></Button>
+      
 
     </View>
   );
