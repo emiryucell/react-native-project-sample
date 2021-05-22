@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { ListItem ,Icon } from "react-native-elements";
+import { TouchableOpacity } from 'react-native';
 
 const Tab = createBottomTabNavigator(
 
@@ -60,6 +61,11 @@ function CategoryScreen({ navigation }) {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFFFF'}}>
 
+      <TouchableOpacity style={styles.addCategoryButton}>
+        <Text style={styles.addCategoryText}>Add Category</Text>
+
+      </TouchableOpacity>
+
       <ScrollView >
           {
             categories.map((item)=> (
@@ -71,7 +77,7 @@ function CategoryScreen({ navigation }) {
                 </ListItem.Content>  
 
                 <ListItem.Content style={{flex:1}} >
-                  <Icon name="delete"  onPress={()=>deleteCategories(item.id)}/>
+                  <Icon name="delete" onPress={()=>deleteCategories(item.id)}/>
                 </ListItem.Content>             
               </ListItem>
             
@@ -203,10 +209,23 @@ borderRadius:10,
     backgroundColor:"blue"
   },
   categories:{
-    flex:4,
+    flex:5,
     padding:5,
     marginLeft:20,
     borderRadius:10,
     backgroundColor:"red"
+  },
+  addCategoryButton:{
+    height:70,
+    width:258,
+    marginTop:10,
+    backgroundColor:"red",
+    borderRadius:10,
+    marginRight:43,
+  },
+  addCategoryText:{
+    color:"white",
+    alignItems:"center",
+    padding:10, 
   }
 });
