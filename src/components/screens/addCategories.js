@@ -8,11 +8,6 @@ import basemanager from '../../../service/baseservice';
 
 const Fetchpostsample = () => {
 
-    manager.get('api/products').then((data)=>{
-        console.log(data);
-    });    
-   
-
 const [categoryName, setCategoryName] = useState('');
 const [description, setDescription] = useState('');
 
