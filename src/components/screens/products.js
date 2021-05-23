@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { ListItem ,Icon } from "react-native-elements";
+import manager from '../../../service/baseservice';
 
 function Products({ navigation }) {
 
@@ -19,17 +20,13 @@ function Products({ navigation }) {
   
   
   const fillData=()=>{
-    //HTTP GET
-    fetch('https://northwind.vercel.app/api/products/')
-   .then((res)=>res.json())
-   .then((data)=> {
-  
-    
-   setProducts(data);
-           
+    manager.get("api/products/")
+    .then((data)=>{
+      setProducts(data);
+          
    })
-  }
   
+  }
   
   const deleteProduct=(id)=>{
     //HTTP DELETE

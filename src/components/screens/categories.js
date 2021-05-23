@@ -7,6 +7,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { ListItem ,Icon } from "react-native-elements";
 import { TouchableOpacity } from 'react-native';
 import { PhoneHeight,PhoneWidth } from "../../../environment/config";
+import manager from '../../../service/baseservice';
 
 function Categories({ navigation }) {
 
@@ -20,14 +21,11 @@ function Categories({ navigation }) {
   }, [])
 
   const fillData=()=>{
-    //HTTP GET
-    fetch('https://northwind.vercel.app/api/categories/')
-   .then((res)=>res.json())
-   .then((data)=> {
-  
     
-   setCategories(data);
-           
+    manager.get("api/categories")
+    .then((data)=>{
+      setCategories(data);
+          
    })
   }
 
