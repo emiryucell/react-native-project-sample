@@ -42,16 +42,17 @@ function Categories({ navigation }) {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFFFF'}}>
 
-      <TouchableOpacity onPress={() => navigation.navigate('addCategories')} style={styles.addCategoryButton}>
-        <Text style={styles.addCategoryText}>Add Category</Text>
-
-      </TouchableOpacity>
+      
 
       <ScrollView >
+      <TouchableOpacity style={{flex:6} , styles.categories} onPress={() => navigation.navigate('addCategories')} style={styles.addCategoryButton}>
+        <Text style={styles.addCategoryText}>Add Category</Text>
+      </TouchableOpacity>
           {
             categories.map((item)=> (
 
               <ListItem style={{flex:6}}>
+                
                 <ListItem.Content style={styles.categories} >
                   <ListItem.Title style={{color:"white"}}>{item.name}</ListItem.Title>
                   <ListItem.Subtitle style={{color:"white"}}>Quantity Per Unit: {item.description}</ListItem.Subtitle>
