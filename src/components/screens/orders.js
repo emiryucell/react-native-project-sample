@@ -24,7 +24,21 @@ function Order({ navigation }) {
 
     return (
       <View>
-       
+        <ScrollView >
+            {
+            orders.map((item)=> (
+
+                <ListItem>
+                    <ListItem.Content>
+                        <ListItem.Title >Order ID: {item.id}</ListItem.Title>
+                        <ListItem.Subtitle >Costumer ID: {item.customerId}</ListItem.Subtitle>
+                        <ListItem.Subtitle >Order Date: {item.orderDate}</ListItem.Subtitle> 
+                      </ListItem.Content>
+                </ListItem>
+    
+            ))
+        }
+        </ScrollView>
       </View>
     );
   }
