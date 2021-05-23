@@ -31,9 +31,16 @@ const StackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={screenOptionStyle}>
       <Stack.Screen name="products" component={Products} />
-      <Stack.Screen name="orders" component={Orders} />
     </Stack.Navigator>
   );
 }
 
-export { MainStackNavigator, StackNavigator };
+const OrderStackNavigator = () => {
+    return (
+      <Stack.Navigator screenOptions={screenOptionStyle}>
+        <Stack.Screen name="orders" component={Orders} />
+      </Stack.Navigator>
+    );
+  }
+
+export { MainStackNavigator, StackNavigator, OrderStackNavigator };
