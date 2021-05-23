@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { ScrollView, View ,StyleSheet} from 'react-native';
+import { ScrollView, StyleSheet, View } from 'react-native';
 import { ListItem } from "react-native-elements";
 import manager from '../../../service/baseservice';
 

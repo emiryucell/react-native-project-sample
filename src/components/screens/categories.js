@@ -1,12 +1,7 @@
-import { StatusBar } from 'expo-status-bar';
-import React,{useState,useEffect}  from 'react';
-import { Button, StyleSheet, Text, View,ScrollView } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import { ListItem ,Icon } from "react-native-elements";
-import { TouchableOpacity } from 'react-native';
-import { PhoneHeight,PhoneWidth } from "../../../environment/config";
+import React, { useEffect, useState } from 'react';
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Icon, ListItem } from "react-native-elements";
+import { PhoneHeight, PhoneWidth } from "../../../environment/config";
 import manager from '../../../service/baseservice';
 
 function Categories({ navigation }) {
