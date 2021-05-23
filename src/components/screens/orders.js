@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { ScrollView, View } from 'react-native';
+import { ScrollView, View ,StyleSheet} from 'react-native';
 import { ListItem } from "react-native-elements";
 import manager from '../../../service/baseservice';
 
-function Order({ navigation }) {
+function Orders({ navigation }) {
 
   const [orders,setOrders]=useState([]);
 
@@ -23,16 +23,16 @@ function Order({ navigation }) {
   }
 
     return (
-      <View>
-        <ScrollView >
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFFFF'}}>
+        <ScrollView>
             {
             orders.map((item)=> (
 
                 <ListItem>
-                    <ListItem.Content>
-                        <ListItem.Title >Order ID: {item.id}</ListItem.Title>
-                        <ListItem.Subtitle >Costumer ID: {item.customerId}</ListItem.Subtitle>
-                        <ListItem.Subtitle >Order Date: {item.orderDate}</ListItem.Subtitle> 
+                    <ListItem.Content style={styles.orders}>
+                        <ListItem.Title style={{color:"white"}}>Order ID: {item.id}</ListItem.Title>
+                        <ListItem.Subtitle style={{color:"white"}}>Costumer ID: {item.customerId}</ListItem.Subtitle>
+                        <ListItem.Subtitle style={{color:"white"}}>Order Date: {item.orderDate}</ListItem.Subtitle> 
                       </ListItem.Content>
                 </ListItem>
     
@@ -43,4 +43,16 @@ function Order({ navigation }) {
     );
   }
 
-  export default Order;
+  const styles = StyleSheet.create({
+    
+    orders:{
+      flex:5,
+      padding:5,
+      borderRadius:10,
+      backgroundColor:"blue"
+    },
+   
+  });
+
+
+  export default Orders;
