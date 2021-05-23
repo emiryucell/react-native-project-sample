@@ -45,7 +45,7 @@ function Categories({ navigation }) {
       
 
       <ScrollView >
-      <TouchableOpacity style={{flex:6} , styles.categories} onPress={() => navigation.navigate('addCategories')} style={styles.addCategoryButton}>
+      <TouchableOpacity style={{flex:6} } onPress={() => navigation.navigate('addCategories')} style={styles.addCategoryButton}>
         <Text style={styles.addCategoryText}>Add Category</Text>
       </TouchableOpacity>
           {
@@ -87,12 +87,14 @@ const styles = StyleSheet.create({
     backgroundColor:"red"
   },
   addCategoryButton:{
-    height:PhoneHeight*0.06,
-    width:PhoneWidth*0.1,
+    textAlign:"center",
+    flex:5,
+    marginLeft:35,
+   marginRight:80,
     marginTop:10,
     backgroundColor:"red",
-    borderRadius:100,
-    marginRight:43,
+    borderRadius:10,
+    
   },
   addCategoryText:{
     color:"white",
