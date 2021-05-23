@@ -2,7 +2,7 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import { MainStackNavigator, StackNavigator, OrderStackNavigator } from "./StackNavigator";
-import Order from "./src/components/screens/orders";
+import Orders from "./src/components/screens/orders";
 
 const Tab = createBottomTabNavigator();
 
