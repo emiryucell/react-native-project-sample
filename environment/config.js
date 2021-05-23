@@ -1,5 +1,4 @@
-import { View, Dimensions, TouchableOpacity, TextInput, StyleSheet, Text, PixelRatio, Image, ActivityIndicator } from 'react-native';
-import { Platform } from 'react-native';
+import { Dimensions, PixelRatio, Platform } from 'react-native';
 
 const config = {
     

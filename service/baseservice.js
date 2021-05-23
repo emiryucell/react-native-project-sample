@@ -1,4 +1,4 @@
-import config from "../environment/config"
+import config from "../environment/config";
 
 const manager = {
     

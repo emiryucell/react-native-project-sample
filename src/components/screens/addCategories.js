@@ -1,10 +1,7 @@
-import React, { useState } from 'react'
-import { Button } from 'react-native';
-import { View, TextInput } from 'react-native';
+import React, { useState } from 'react';
+import { Button, View } from 'react-native';
 import { Input } from 'react-native-elements';
-import config from '../../../environment/config'
 import manager from '../../../service/baseservice';
-import basemanager from '../../../service/baseservice';
 
 const Fetchpostsample = () => {
 
