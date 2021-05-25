@@ -1,17 +1,40 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import { MainStackNavigator, StackNavigator, OrderStackNavigator } from "./StackNavigator";
-import Orders from "./src/components/screens/orders";
 
 const Tab = createBottomTabNavigator();
 
 const BottomTabNavigator = () => {
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="categories" component={MainStackNavigator} />
-      <Tab.Screen name="products" component={StackNavigator} />
-      <Tab.Screen name="orders" component={OrderStackNavigator} />
+    
+    <Tab.Navigator
+
+      screenOptions={({ route }) => ({
+
+        tabBarIcon: ({ focused, color, size }) => {
+          let iconName;
+
+          if (route.name === 'Order') {
+            iconName = focused ? 'cart' : 'cart-outline';
+          } else if (route.name === 'Category') {
+            iconName = focused ? 'list' : 'list-outline';
+          } else if (route.name === 'Product') {
+            iconName = focused ? 'albums' : 'albums-outline';
+          }
+
+
+          return <Ionicons name={iconName} size={size} color={color} />;
+        },
+      })}
+        tabBarOptions={{
+        activeTintColor: 'tomato',
+        inactiveTintColor: 'gray',
+      }}
+      >
+      <Tab.Screen name="Products" component={StackNavigator} />
+      <Tab.Screen name="Categories" component={MainStackNavigator} />
+      <Tab.Screen name="Orders" component={OrderStackNavigator} />
     </Tab.Navigator>
   );
 };
