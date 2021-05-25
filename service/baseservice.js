@@ -11,9 +11,7 @@ const manager = {
         .then((data) => {
             responsedata = data;
         });
-
-        return responsedata;
-
+        return responsedata; 
     },
 
     post: async(url, data) => {

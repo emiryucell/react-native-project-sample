@@ -45,24 +45,31 @@ function Categories({ navigation }) {
       
 
       <ScrollView >
-      <TouchableOpacity style={{flex:6} } onPress={() => navigation.navigate('addCategories')} style={styles.addCategoryButton}>
+      <TouchableOpacity style={{flex:6} } onPress={() => navigation.navigate('Add Categories')} style={styles.addCategoryButton}>
         <Text style={styles.addCategoryText}>Add Category</Text>
       </TouchableOpacity>
           {
             categories.map((item)=> (
 
               <ListItem style={{flex:6}}>
-                
+               
                 <ListItem.Content style={styles.categories} >
-                  <ListItem.Title style={{color:"white"}}>{item.name}</ListItem.Title>
-                  <ListItem.Subtitle style={{color:"white"}}>Quantity Per Unit: {item.description}</ListItem.Subtitle>
+                  <TouchableOpacity onPress={() => navigation.navigate('Update Categories',{
+                    itemName: item.name,
+                    itemDescription: item.description,
+                    itemId: item.id,
+                  }) } >
+                    <ListItem.Title style={{color:"white"}}>{item.name}</ListItem.Title>
+                    <ListItem.Subtitle style={{color:"white"}}>Description: {item.description}</ListItem.Subtitle>
+                  </TouchableOpacity>  
                 </ListItem.Content>  
 
                 <ListItem.Content style={{flex:1}} >
                   <Icon name="delete" onPress={()=>deleteCategories(item.id)}/>
-                </ListItem.Content>             
+                </ListItem.Content>  
+                          
               </ListItem>
-            
+              
             ))
           }
       </ScrollView>
