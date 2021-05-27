@@ -27,6 +27,18 @@ function ProductDetail({ navigation ,route}) {
         <Text>
         Product Name : {product.name}
         </Text>
+        <Text>
+        quantityPerUnit: {product.quantityPerUnit}
+        </Text>
+        <Text>
+        unitsInStock: {product.unitsInStock}
+        </Text>
+        <Text>
+        unitPrice: {product.unitPrice}
+        </Text>
+        <Text>
+        unitsOnOrder: {product.unitsOnOrder}
+        </Text>
       </View>
     );
   }
