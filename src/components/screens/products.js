@@ -7,12 +7,15 @@ function Products({ navigation }) {
 
 
   const [products,setProducts]=useState([]);
+
+
   
   useEffect(() => {
   
     fillData();
    
   }, [])
+
   
   
   const fillData=()=>{
@@ -22,8 +25,9 @@ function Products({ navigation }) {
           
    })
   
+   
   }
-  
+ 
   const deleteProduct=(id)=>{
     //HTTP DELETE
             let requestoptions={
@@ -51,6 +55,9 @@ function Products({ navigation }) {
                         <ListItem.Title style={{color:"white"}}>{item.name}</ListItem.Title>
                         <ListItem.Subtitle style={{color:"white"}}>Quantity Per Unit: {item.quantityPerUnit}</ListItem.Subtitle>
                         <ListItem.Subtitle style={{color:"white"}}>Unit Price: {item.unitPrice}$</ListItem.Subtitle> 
+                      </ListItem.Content>
+                      <ListItem.Content style={{flex:1}} >
+                      <Icon name="sc-telegram"  onPress={() => navigation.navigate("Product Detail")}/>
                       </ListItem.Content>
                       <ListItem.Content style={{flex:1}} >
                       <Icon name="delete"  onPress={()=>deleteProduct(item.id)}/>
