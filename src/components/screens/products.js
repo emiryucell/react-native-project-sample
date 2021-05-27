@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ScrollView, StyleSheet, View } from 'react-native';
-import { Icon, ListItem } from "react-native-elements";
+import { Icon, ListItem ,Button} from "react-native-elements";
 import manager from '../../../service/baseservice';
 
 function Products({ navigation }) {
@@ -57,12 +57,14 @@ function Products({ navigation }) {
                         <ListItem.Subtitle style={{color:"white"}}>Quantity Per Unit: {item.quantityPerUnit}</ListItem.Subtitle>
                         <ListItem.Subtitle style={{color:"white"}}>Unit Price: {item.unitPrice}$</ListItem.Subtitle> 
                       </ListItem.Content>
+                    <ListItem.Content style={{flex:1,justifyContent: 'center', alignItems: 'center'}} >
                       <ListItem.Content style={{flex:1}} >
-                      <Icon name="sc-telegram"  onPress={() =>navigation.navigate("Product Detail",{id:item.id})}/>
+                      <Button title="Detail"  onPress={() =>navigation.navigate("Product Detail",{id:item.id})}/>
                       </ListItem.Content>
                       <ListItem.Content style={{flex:1}} >
                       <Icon name="delete"  onPress={()=>deleteProduct(item.id)}/>
                       </ListItem.Content>
+                    </ListItem.Content>
                 </ListItem>
     
             ))
