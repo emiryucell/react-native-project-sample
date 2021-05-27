@@ -14,12 +14,12 @@ const BottomTabNavigator = () => {
 
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
-
-          if (route.name === 'Order') {
+         
+          if (route.name === 'Orders') {
             iconName = focused ? 'cart' : 'cart-outline';
-          } else if (route.name === 'Category') {
+          } else if (route.name === 'Categories') {
             iconName = focused ? 'list' : 'list-outline';
-          } else if (route.name === 'Product') {
+          } else if (route.name === 'Products') {
             iconName = focused ? 'albums' : 'albums-outline';
           }
 
