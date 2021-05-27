@@ -6,6 +6,7 @@ import Categories from "./src/components/screens/categories"
 import Orders from "./src/components/screens/orders"
 import addCategories from './src/components/screens/addCategories';
 import updateCategories from "./src/components/screens/updateCategories";
+import ProductDetail from "./src/components/screens/productDetail";
 
 const Stack = createStackNavigator();
 
@@ -23,8 +24,6 @@ const MainStackNavigator = () => {
       <Stack.Screen name="Categories" component={Categories} />
       <Stack.Screen name="Add Categories" component={addCategories} />
       <Stack.Screen name="Update Categories" component={updateCategories} />
-      
-      
     </Stack.Navigator>
   );
 }
@@ -33,6 +32,7 @@ const StackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={screenOptionStyle}>
       <Stack.Screen name="Products" component={Products} />
+      <Stack.Screen name="Product Detail" component={ProductDetail} />
     </Stack.Navigator>
   );
 }
