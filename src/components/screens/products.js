@@ -7,7 +7,8 @@ function Products({ navigation }) {
 
 
   const [products,setProducts]=useState([]);
-
+  
+ 
 
   
   useEffect(() => {
@@ -57,7 +58,7 @@ function Products({ navigation }) {
                         <ListItem.Subtitle style={{color:"white"}}>Unit Price: {item.unitPrice}$</ListItem.Subtitle> 
                       </ListItem.Content>
                       <ListItem.Content style={{flex:1}} >
-                      <Icon name="sc-telegram"  onPress={() => navigation.navigate("Product Detail")}/>
+                      <Icon name="sc-telegram"  onPress={() =>navigation.navigate("Product Detail",{id:item.id})}/>
                       </ListItem.Content>
                       <ListItem.Content style={{flex:1}} >
                       <Icon name="delete"  onPress={()=>deleteProduct(item.id)}/>
