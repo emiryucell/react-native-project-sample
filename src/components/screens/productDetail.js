@@ -23,22 +23,28 @@ function ProductDetail({ navigation ,route}) {
 
 
     return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFFFF'}}>
-        <Text>
+      //buraya ortak resim eklenebilir
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}}> 
+         <View style={{ flex: 1}}/>
+          <View style={{ flex: 1,marginVertical:50, justifyContent: 'center', alignItems: 'center' , backgroundColor: '#4632a8',borderRadius:10}}>
+        <Text style={{margin:5,fontSize:15, fontFamily:"sans-serif-medium"}}>
         Product Name : {product.name}
         </Text>
         <Text>
         quantityPerUnit: {product.quantityPerUnit}
         </Text>
         <Text>
-        unitsInStock: {product.unitsInStock}
+        unitsInStock: {product.unitsInStock} 
         </Text>
-        <Text>
-        unitPrice: {product.unitPrice}
+        <Text style={{ color:"green",
+    fontWeight:'bold'}}>
+        unitPrice: {product.unitPrice} $
         </Text>
         <Text>
         unitsOnOrder: {product.unitsOnOrder}
         </Text>
+        </View>
+        <View style={{ flex: 1}}/>
       </View>
     );
   }
