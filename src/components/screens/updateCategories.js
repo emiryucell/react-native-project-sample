@@ -12,6 +12,10 @@ function UpdateCategories ({route, navigation }) {
     const [descriptionName, setDescriptionName] = useState();
 
     const [categories,setCategories]=useState([]);
+    
+    const navigate = () => {
+        navigation.navigate("Categories")
+    }
 
     
     useEffect(() => {
@@ -63,7 +67,7 @@ function UpdateCategories ({route, navigation }) {
                     
                 />  
         
-                <Button onPress={() => requestOptions} title='Update'></Button>
+                <Button onPress={() => requestOptions, navigate} title='Update'></Button>
                 
             </View>
         )
