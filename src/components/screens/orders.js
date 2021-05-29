@@ -23,8 +23,8 @@ function Orders({ navigation }) {
   }
 
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFFFF'}}>
-        <ScrollView>
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#6fa3f7'}}>
+        <ScrollView style={styles.orders}>
             {
             orders.map((item)=> (
 
@@ -32,6 +32,7 @@ function Orders({ navigation }) {
                     <ListItem.Content style={styles.orders}>
                         <ListItem.Title style={{color:"white"}}>Order ID: {item.id}</ListItem.Title>
                         <ListItem.Subtitle style={{color:"white"}}>Costumer ID: {item.customerId}</ListItem.Subtitle>
+                        <ListItem.Subtitle style={{color:"white"}}>Order Ship Name: {item.shipName}</ListItem.Subtitle> 
                         <ListItem.Subtitle style={{color:"white"}}>Order Date: {item.orderDate}</ListItem.Subtitle> 
                       </ListItem.Content>
                 </ListItem>
@@ -49,7 +50,7 @@ function Orders({ navigation }) {
       flex:5,
       padding:5,
       borderRadius:10,
-      backgroundColor:"blue"
+      backgroundColor:"#367ff5"
     },
    
   });
