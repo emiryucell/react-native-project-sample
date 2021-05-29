@@ -40,18 +40,16 @@ function Categories({ navigation }) {
   
 
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FFFFFF'}}>
-
-      
+    <View style={styles.container}>
 
       <ScrollView >
-      <TouchableOpacity style={{flex:6} } onPress={() => navigation.navigate('Add Categories')} style={styles.addCategoryButton}>
+      <TouchableOpacity  onPress={() => navigation.navigate('Add Categories')} style={styles.addCategoryButton}>
         <Text style={styles.addCategoryText}>Add Category</Text>
       </TouchableOpacity>
           {
             categories.map((item)=> (
 
-              <ListItem style={{flex:6}}>
+              <ListItem style={{flex:1}}>
                
                 <ListItem.Content style={styles.categories} >
 
@@ -86,25 +84,24 @@ function Categories({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#FFFFFF',
     alignItems: 'center',
     justifyContent: 'center',
   },
   categories:{
     flex:5,
     padding:5,
-    marginLeft:20,
     borderRadius:10,
-    backgroundColor:"red"
+    backgroundColor:"#367ff5",
   },
   addCategoryButton:{
     textAlign:"center",
-    flex:5,
-    marginLeft:35,
-   marginRight:80,
-    marginTop:10,
-    backgroundColor:"red",
+    flex:1,
+    padding:5,
+    backgroundColor:"#6fa3f7",
     borderRadius:10,
+    borderColor:"#367ff5",
+    borderWidth:5,
     
   },
   addCategoryText:{
