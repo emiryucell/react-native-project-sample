@@ -10,17 +10,16 @@ import ProductDetail from "./src/components/screens/productDetail";
 
 const Stack = createStackNavigator();
 
-const screenOptionStyle = {
-  headerStyle: {
-    backgroundColor: "#9AC4F8",
-  },
+const navigationOptions = {
+  headerTitleStyle: { alignSelf: 'center' },
+  headerStyle: { backgroundColor: "#9AC4F8" },
   headerTintColor: "white",
   headerBackTitle: "Back",
-};
+}
 
 const MainStackNavigator = () => {
   return (
-    <Stack.Navigator screenOptions={screenOptionStyle}>
+    <Stack.Navigator screenOptions={navigationOptions}>
       <Stack.Screen name="Categories" component={Categories} />
       <Stack.Screen name="Add Categories" component={addCategories} />
       <Stack.Screen name="Update Categories" component={updateCategories} />
@@ -30,7 +29,7 @@ const MainStackNavigator = () => {
 
 const StackNavigator = () => {
   return (
-    <Stack.Navigator screenOptions={screenOptionStyle}>
+    <Stack.Navigator screenOptions={navigationOptions}>
       <Stack.Screen name="Products" component={Products} />
       <Stack.Screen name="Product Detail" component={ProductDetail} />
     </Stack.Navigator>
@@ -39,7 +38,7 @@ const StackNavigator = () => {
 
 const OrderStackNavigator = () => {
     return (
-      <Stack.Navigator screenOptions={screenOptionStyle}>
+      <Stack.Navigator screenOptions={navigationOptions}>
         <Stack.Screen name="Orders" component={Orders} />
       </Stack.Navigator>
     );
