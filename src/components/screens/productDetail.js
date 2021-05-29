@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View,Image } from 'react-native';
 import manager from '../../../service/baseservice';
+
+
 
 function ProductDetail({ navigation ,route}) {
   const {id} = route.params;
@@ -24,27 +26,30 @@ function ProductDetail({ navigation ,route}) {
 
     return (
       //buraya ortak resim eklenebilir
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center'}}> 
-         <View style={{ flex: 1}}/>
-          <View style={{ flex: 1,marginVertical:50, justifyContent: 'center', alignItems: 'center' , backgroundColor: '#4632a8',borderRadius:10}}>
-        <Text style={{margin:5,fontSize:15, fontFamily:"sans-serif-medium"}}>
-        Product Name : {product.name}
+        <View style={{ flex: 1}}> 
+        
+          <View style={{ flex: 1, justifyContent:"flex-end", alignItems:"flex-start" , backgroundColor: '#4632a8'}}>
+       
+        <Text style={{margin:5,fontSize:25,color:"#FFFFFF", fontFamily:"Roboto"}}>
+        Product Name :{"\n"+product.name}
         </Text>
-        <Text>
-        quantityPerUnit: {product.quantityPerUnit}
+    
+        </View>
+        <View style={{flex:2  ,backgroundColor: '#FFFFFF'}}>
+        <Text style={{margin:5,fontSize:20, fontFamily:"Roboto"}}>
+        Quantity Per Unit: {product.quantityPerUnit}
         </Text>
-        <Text>
-        unitsInStock: {product.unitsInStock} 
+        <Text style={{margin:5,fontSize:20, fontFamily:"Roboto"}}>
+        Units In Stock: {product.unitsInStock} 
         </Text>
-        <Text style={{ color:"green",
+        <Text style={{margin:5,fontSize:20, color:"green",
     fontWeight:'bold'}}>
-        unitPrice: {product.unitPrice} $
+        Unit Price: {product.unitPrice}$
         </Text>
-        <Text>
-        unitsOnOrder: {product.unitsOnOrder}
+        <Text style={{margin:5,fontSize:20, fontFamily:"Roboto"}}>
+        Units On Order: {product.unitsOnOrder}
         </Text>
         </View>
-        <View style={{ flex: 1}}/>
       </View>
     );
   }
