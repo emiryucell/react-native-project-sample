@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { ScrollView, StyleSheet, View } from 'react-native';
-import { Icon, ListItem ,Button} from "react-native-elements";
+import { ScrollView, StyleSheet, View,TouchableOpacity,Text } from 'react-native';
+import { Icon, ListItem } from "react-native-elements";
 import manager from '../../../service/baseservice';
 
 function Products({ navigation }) {
@@ -59,7 +59,10 @@ function Products({ navigation }) {
                       </ListItem.Content>
                     <ListItem.Content style={{flex:1,justifyContent: 'center', alignItems: 'center'}} >
                       <ListItem.Content style={{flex:1}} >
-                      <Button title="Detail"  onPress={() =>navigation.navigate("Product Detail",{id:item.id})}/>
+                      <TouchableOpacity  onPress={() =>navigation.navigate("Product Detail",{id:item.id})} style={styles.detailButton}>
+        <Text style={{color:"white"}}>Detail</Text>
+      </TouchableOpacity>
+                 
                       </ListItem.Content>
                       <ListItem.Content style={{flex:1}} >
                       <Icon name="delete"  onPress={()=>deleteProduct(item.id)}/>
@@ -77,7 +80,7 @@ function Products({ navigation }) {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: '#fff',
+      backgroundColor: '#FFFFFF',
       alignItems: 'center',
       justifyContent: 'center',
     },
@@ -85,27 +88,18 @@ function Products({ navigation }) {
   flex:5,
   padding:5,
   borderRadius:10,
-      backgroundColor:"blue"
+      backgroundColor:"#367ff5"
     },
-    categories:{
-      flex:5,
+    detailButton:{
+      textAlign:"center",
+      flex:1,
       padding:5,
-      marginLeft:20,
+      backgroundColor:"#6fa3f7",
       borderRadius:10,
-      backgroundColor:"red"
-    },
-    addCategoryButton:{
-      height:70,
-      width:258,
-      marginTop:10,
-      backgroundColor:"red",
-      borderRadius:10,
-      marginRight:43,
-    },
-    addCategoryText:{
-      color:"white",
-      alignItems:"center",
-      padding:10, 
+      borderColor:"#367ff5",
+      borderWidth:5,
+      
+      
     }
   });
 
