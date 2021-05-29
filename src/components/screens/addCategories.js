@@ -3,7 +3,7 @@ import { TouchableOpacity, StyleSheet, View,Text } from 'react-native';
 import { Input } from 'react-native-elements';
 import manager from '../../../service/baseservice';
 
-const Fetchpostsample = () => {
+const Fetchpostsample = ({navigation}) => {
 
 const [categoryName, setCategoryName] = useState('');
 const [description, setDescription] = useState('');
@@ -12,6 +12,7 @@ const send = () => {
 
     manager.post('api/categories',{name:categoryName, description:description})
     .then((res)=> {
+        navigation.navigate('Categories');
         alert('Category adding done!');
     })
     
