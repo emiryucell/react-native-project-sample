@@ -17,10 +17,14 @@ function Orders({ navigation }) {
     
     manager.get("api/orders")
     .then((data)=>{
+     data= data.sort(function(a,b){
+      return new Date(b.orderDate) - new Date(a.orderDate);
+    });
       setOrders(data);
           
    })
   }
+  
 
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#6fa3f7'}}>
