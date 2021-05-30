@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
+import { render } from 'react-dom';
 import { TouchableOpacity, StyleSheet, View,Text } from 'react-native';
 import { Input } from 'react-native-elements';
 import manager from '../../../service/baseservice';
+import Categories from './categories';
+
 
 const Fetchpostsample = ({navigation}) => {
 
@@ -12,12 +15,11 @@ const send = () => {
 
     manager.post('api/categories',{name:categoryName, description:description})
     .then((res)=> {
-        navigation.navigate('Categories');
+        navigation.push('Categories');
         alert('Category adding done!');
     })
-    
-
 }
+
 
 return (
     <View style={styles.container}>

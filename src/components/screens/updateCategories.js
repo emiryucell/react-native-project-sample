@@ -14,7 +14,7 @@ function UpdateCategories ({route, navigation }) {
     const [categories,setCategories]=useState([]);
     
     const navigate = () => {
-        navigation.navigate("Categories")
+        navigation.push("Categories")
     }
 
     
