@@ -4,8 +4,15 @@ import { Icon, ListItem } from "react-native-elements";
 import { PhoneHeight, PhoneWidth } from "../../../environment/config";
 import manager from '../../../service/baseservice';
 
+
+
+
+
+
+
 function Categories({ navigation }) {
 
+ 
   
   const [categories,setCategories]=useState([]);
 
