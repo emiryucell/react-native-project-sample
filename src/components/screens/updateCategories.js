@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { View, Button } from 'react-native'
+import { View, Button,StyleSheet,TouchableOpacity,Text } from 'react-native'
 import { Input } from 'react-native-elements';
 import manager from '../../../service/baseservice';
 
@@ -52,27 +52,67 @@ function UpdateCategories ({route, navigation }) {
           
 
         return (
-            <View>
-                <Input
+            <View style={styles.container}>
+        <View style={styles.dummy}></View>
+        <View style={styles.inputs}> <Input
                     placeholder='Category name'
                     onChangeText={value => setCategoryName(value)}
                     defaultValue={JSON.stringify(itemName)}
 
-                />
+                /></View> 
         
-                <Input
+        <View style={styles.inputs}> <Input
                     placeholder='Description'
                     onChangeText={value => setDescriptionName(value)}
                     defaultValue={JSON.stringify(itemDescription)}
                     
-                />  
-        
-                <Button onPress={() => requestOptions, navigate} title='Update'></Button>
-                
+                />  </View> 
+         <TouchableOpacity  onPress={() => requestOptions, navigate} style={styles.updateCategoryButton} >
+            <Text style={styles.updateCategoryText}>UPDATE</Text>
+            </TouchableOpacity>
+            
+           
+                <View style={styles.dummy}></View>
             </View>
         )
 
 }
+const styles = StyleSheet.create({
+    container: {
+      flex: 2,
+      flexDirection:"column",
+      backgroundColor: '#FFFFFF',
+      alignItems: 'center',
+      justifyContent:"space-evenly",
+    },
+    dummy:{flex:5},
 
+    inputs:{
+        flex: 1,
+        backgroundColor:"#6fa3f7",
+        borderColor:"#367ff5",
+        borderRadius:5,
+        borderWidth:5,
+        margin:5,
+        
+    }
+    ,
+    updateCategoryButton:{
+        textAlign:"center",
+        flex:1,
+        
+        backgroundColor:"#6fa3f7",
+        borderRadius:10,
+        borderColor:"#367ff5",
+        borderWidth:5
+      
+    },
+    updateCategoryText:{
+        color:"white",
+        alignItems:"center",
+        padding:10, 
+      }
+   
+  });
 
 export default UpdateCategories;
