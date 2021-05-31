@@ -56,6 +56,9 @@ function UpdateCategories ({route, navigation }) {
         <View style={styles.dummy}></View>
         <View style={styles.inputs}> <Input
                     placeholder='Category name'
+                    placeholderTextColor="white"
+                    inputContainerStyle={{borderColor:"white"}}
+                    inputStyle={{'color': 'white'}}
                     onChangeText={value => setCategoryName(value)}
                     defaultValue={JSON.stringify(itemName)}
 
@@ -63,6 +66,9 @@ function UpdateCategories ({route, navigation }) {
         
         <View style={styles.inputs}> <Input
                     placeholder='Description'
+                    placeholderTextColor="white"
+                    inputContainerStyle={{borderColor:"white"}}
+                    inputStyle={{'color': 'white'}}
                     onChangeText={value => setDescriptionName(value)}
                     defaultValue={JSON.stringify(itemDescription)}
                     
@@ -81,7 +87,7 @@ const styles = StyleSheet.create({
     container: {
       flex: 2,
       flexDirection:"column",
-      backgroundColor: '#FFFFFF',
+      backgroundColor: '#6fa3f7',
       alignItems: 'center',
       justifyContent:"space-evenly",
     },
