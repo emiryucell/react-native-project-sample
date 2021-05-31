@@ -3,7 +3,6 @@ import { render } from 'react-dom';
 import { TouchableOpacity, StyleSheet, View,Text } from 'react-native';
 import { Input } from 'react-native-elements';
 import manager from '../../../service/baseservice';
-import Categories from './categories';
 
 
 const Fetchpostsample = ({navigation}) => {
@@ -24,22 +23,29 @@ const send = () => {
 return (
     <View style={styles.container}>
         <View style={styles.dummy}></View>
-       <View style={styles.inputs}><Input 
-            placeholder='Category name' placeholderTextColor="white" 
+       <View style={styles.inputs}>
+           <Input 
+            placeholder='Category name' 
+            placeholderTextColor="white" 
+            inputContainerStyle={{borderColor:"white"}}
+            inputStyle={{'color': 'white'}}
             onChangeText={value => setCategoryName(value)}
-        /></View> 
-        <View style={styles.inputs}><Input placeholderTextColor="white" 
+            />
+        </View> 
+        <View style={styles.inputs}>
+            <Input 
+            placeholderTextColor="white" 
             placeholder='Description'
+            inputContainerStyle={{borderColor:"white"}}
+            inputStyle={{'color': 'white'}}
             onChangeText={value => setDescription(value)}
-        />  </View>
-
-        
+            />  
+        </View>
 
         <TouchableOpacity  onPress={() => send()} style={styles.addCategoryButton} >
             <Text style={styles.addCategoryText}>ADD</Text>
             </TouchableOpacity>
             
-
             <View style={styles.dummy}></View>
     </View>
 )
@@ -48,31 +54,27 @@ const styles = StyleSheet.create({
     container: {
       flex: 2,
       flexDirection:"column",
-      backgroundColor: '#FFFFFF',
+      backgroundColor: "#6fa3f7",
       alignItems: 'center',
       justifyContent:"space-evenly",
     },
-    dummy:{flex:5},
-
-    inputs:{
+    dummy:{flex:5
+    },
+     inputs:{
         flex: 1,
         backgroundColor:"#6fa3f7",
         borderColor:"#367ff5",
         borderRadius:5,
         borderWidth:5,
-        margin:5,
-        
-    }
-    ,
+        margin:5,     
+    },
     addCategoryButton:{
         textAlign:"center",
-        flex:1,
-        
+        flex:1,      
         backgroundColor:"#6fa3f7",
         borderRadius:10,
         borderColor:"#367ff5",
-        borderWidth:5
-      
+        borderWidth:5   
     },
     addCategoryText:{
         color:"white",
