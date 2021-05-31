@@ -68,11 +68,11 @@ function Categories({ navigation }) {
                   </ListItem.Content>
                   <View style={{ flex: 2, flexDirection: "row" }}>
                     <ListItem.Content style={{ flex: 1 }} >
-                      <Icon name="delete" onPress={() => deleteCategories(item.id)} />
+                      <Icon name="delete" color="white" onPress={() => deleteCategories(item.id)} />
                     </ListItem.Content>
 
                     <ListItem.Content style={{ flex: 1 }} >
-                      <Icon name="update" onPress={() => navigation.navigate('Update Categories', {
+                      <Icon name="update" color="white" onPress={() => navigation.navigate('Update Categories', {
                         itemName: item.name,
                         itemDescription: item.description,
                         itemId: item.id,
