@@ -1,3 +1,4 @@
+import color from 'color';
 import React, { useEffect, useState } from 'react';
 import { Text, View, Image, StyleSheet } from 'react-native';
 import manager from '../../../service/baseservice';
@@ -19,7 +20,6 @@ function ProductDetail({ navigation, route }) {
     manager.get("api/products/" + id)
       .then((data) => {
         setProduct(data);
-
       })
   }
 
@@ -29,6 +29,9 @@ function ProductDetail({ navigation, route }) {
     <View style={{ flex: 1 }}>
 
       <View style={styles.container}>
+
+      <Image source={require("../../../assets/box.png")} 
+      style={{ width: 150, height: 150 }}/>
 
         <Text style={{ margin: 5, fontSize: 25, color: "#FFFFFF", fontFamily: "Roboto" }}>
           Product Name :{"\n" + product.name}
@@ -66,7 +69,8 @@ const styles = StyleSheet.create({
   subTextStyle: {
     margin: 5,
     fontSize: 20,
-    fontFamily: "Roboto"
+    fontFamily: "Roboto",
+    color:"white"
 
   }
 });
