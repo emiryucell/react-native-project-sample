@@ -34,6 +34,19 @@ const manager = {
 
         return resultdata;
 
+    },
+    put:async(url,data,itemId)=>{
+        let resultdata;
+        const requestOptions = {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        };
+
+        await fetch('https://northwind.vercel.app/api/categories/'+itemId, requestOptions)
+        .then(response => response.json())
+        .then(data => console.log(data));
+        
     }
 
 }
