@@ -3,6 +3,7 @@ import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-nati
 import { ListItem } from "react-native-elements";
 import manager from '../../../../service/baseservice';
 
+
 function Products({ navigation }) {
 
 
@@ -45,19 +46,22 @@ function Products({ navigation }) {
 
 
   return (
-    <View style={styles.container}>
+  <View style={styles.container}>
 
-      <ScrollView >
+  <ScrollView >
         {
           products.map((item) => (
 
-            <ListItem containerStyle={{ backgroundColor: "#6fa3f7", flexDirection: "row", flex: 6 }}>
+    <ListItem containerStyle={{ backgroundColor: "#6fa3f7"}}>
+        <View style={{flex:6}}>
               <ListItem.Content style={styles.products} >
                 <ListItem.Title style={{ color: "white" }}>{item.name}</ListItem.Title>
                 <ListItem.Subtitle style={{ color: "white" }}>Quantity Per Unit: {item.quantityPerUnit}</ListItem.Subtitle>
                 <ListItem.Subtitle style={{ color: "white" }}>Unit Price: {item.unitPrice}$</ListItem.Subtitle>
               </ListItem.Content>
-              <ListItem.Content style={{ flex: 1 }}>
+        </View>
+        <View>
+              <ListItem.Content>
                 <ListItem.Content style={{ flex: 1 }} >
                   <TouchableOpacity onPress={() => navigation.navigate("Product Detail", { id: item.id })} style={styles.detailButton}>
                     <Text style={{ color: "white" }}>Detail</Text>
@@ -71,12 +75,13 @@ function Products({ navigation }) {
                   </TouchableOpacity>
                 </ListItem.Content>
               </ListItem.Content>
-            </ListItem>
+        </View>
+    </ListItem>
 
           ))
         }
-      </ScrollView>
-    </View>
+</ScrollView>
+</View>
   );
 }
 
@@ -88,9 +93,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   products: {
-    flex: 5,
+  
     padding: 5,
-
     borderTopLeftRadius: 10,
     borderBottomLeftRadius: 10,
     backgroundColor: "#367ff5"

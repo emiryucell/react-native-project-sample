@@ -52,7 +52,7 @@ function Categories({ navigation }) {
 
       <ScrollView  >
         <View style={{ flex: 6, flexDirection: "column", justifyContent: "center" }}>
-          <TouchableOpacity onPress={() => navigation.navigate('Add Categories')} style={styles.addCategoryButton}>
+          <TouchableOpacity onPress={() => navigation.push('Add Categories')} style={styles.addCategoryButton}>
             <Text style={styles.addCategoryText}>Add Category</Text>
           </TouchableOpacity>
           {
@@ -72,7 +72,7 @@ function Categories({ navigation }) {
                     </ListItem.Content>
 
                     <ListItem.Content style={{ flex: 1 }} >
-                      <Icon name="update" color="white" onPress={() => navigation.navigate('Update Categories', {
+                      <Icon name="update" color="white" onPress={() => navigation.push('Update Categories', {
                         itemName: item.name,
                         itemDescription: item.description,
                         itemId: item.id,

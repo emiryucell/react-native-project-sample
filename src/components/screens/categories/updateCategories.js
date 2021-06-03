@@ -48,7 +48,7 @@ function UpdateCategories({ route, navigation }) {
 
     return (
         <View style={styles.container}>
-            <View style={styles.dummy}></View>
+            <View>
             <View style={styles.inputs}> <Input
                 placeholder='Category name'
                 placeholderTextColor="white"
@@ -71,9 +71,8 @@ function UpdateCategories({ route, navigation }) {
             <TouchableOpacity onPress={() => update()} style={styles.updateCategoryButton} >
                 <Text style={styles.updateCategoryText}>UPDATE</Text>
             </TouchableOpacity>
+            </View>
 
-
-            <View style={styles.dummy}></View>
         </View>
     )
 
@@ -86,7 +85,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: "space-evenly",
     },
-    dummy: { flex: 5 },
+ 
 
     inputs: {
         flex: 1,
