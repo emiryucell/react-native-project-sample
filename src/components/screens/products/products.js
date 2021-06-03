@@ -52,8 +52,9 @@ function Products({ navigation }) {
         {
           products.map((item) => (
 
-    <ListItem containerStyle={{ backgroundColor: "#6fa3f7"}}>
-        <View style={{flex:6}}>
+    <ListItem containerStyle={{ backgroundColor: "#6fa3f7",flex:1,flexDirection:"row"}}>
+      <View style={{flex:1,flexDirection:"row"}}>
+        <View style={{flex:1}}>
               <ListItem.Content style={styles.products} >
                 <ListItem.Title style={{ color: "white" }}>{item.name}</ListItem.Title>
                 <ListItem.Subtitle style={{ color: "white" }}>Quantity Per Unit: {item.quantityPerUnit}</ListItem.Subtitle>
@@ -62,7 +63,7 @@ function Products({ navigation }) {
         </View>
         <View>
               <ListItem.Content>
-                <ListItem.Content style={{ flex: 1 }} >
+                <ListItem.Content  >
                   <TouchableOpacity onPress={() => navigation.navigate("Product Detail", { id: item.id })} style={styles.detailButton}>
                     <Text style={{ color: "white" }}>Detail</Text>
                   </TouchableOpacity>
@@ -76,6 +77,7 @@ function Products({ navigation }) {
                 </ListItem.Content>
               </ListItem.Content>
         </View>
+        </View> 
     </ListItem>
 
           ))
@@ -102,22 +104,26 @@ const styles = StyleSheet.create({
   detailButton: {
     flex: 1,
     padding: 5,
-    backgroundColor: "green",
-    alignSelf: 'stretch',
+    backgroundColor: "#6fa3f7",
+  
     paddingRight: 9.5,
     paddingTop: 10,
     borderTopRightRadius: 10,
+    borderColor:"#367ff5",
+    borderWidth:2,
 
 
   },
   deleteButton: {
 
     flex: 1,
-    alignSelf: 'stretch',
+    
     padding: 5,
     paddingBottom: 10,
-    backgroundColor: "red",
+    backgroundColor: "#6fa3f7",
     borderBottomRightRadius: 10,
+    borderColor:"#367ff5",
+    borderWidth:2,
 
   }
 });
