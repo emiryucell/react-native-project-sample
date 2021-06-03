@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { ListItem } from "react-native-elements";
-import manager from '../../../service/baseservice';
+import manager from '../../../../service/baseservice';
 
 function Products({ navigation }) {
 

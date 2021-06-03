@@ -1,12 +1,12 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
-import Products from "./src/components/screens/products"
-import Categories from "./src/components/screens/categories"
-import Orders from "./src/components/screens/orders"
-import addCategories from './src/components/screens/addCategories';
-import updateCategories from "./src/components/screens/updateCategories";
-import ProductDetail from "./src/components/screens/productDetail";
+import Products from "../screens/products/products"
+import Categories from "../screens/categories/categories"
+import Orders from "../screens/orders/orders"
+import addCategories from '../screens/categories/addCategories';
+import updateCategories from "../screens/categories/updateCategories";
+import ProductDetail from "../screens/products/productDetail";
 
 const Stack = createStackNavigator();
 

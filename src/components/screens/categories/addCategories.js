@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { render } from 'react-dom';
 import { TouchableOpacity, StyleSheet, View,Text } from 'react-native';
 import { Input } from 'react-native-elements';
-import manager from '../../../service/baseservice';
+import manager from '../../../../service/baseservice';
 
 
 const Fetchpostsample = ({navigation}) => {

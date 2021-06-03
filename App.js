@@ -1,6 +1,6 @@
 import { NavigationContainer } from "@react-navigation/native";
 import React from 'react';
-import BottomTabNavigator from "./TabNavigator";
+import BottomTabNavigator from "../react-native-project-sample/src/components/navigators/tabNavigator";
 
 
 export default function App() {

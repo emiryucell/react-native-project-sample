@@ -1,7 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { MainStackNavigator, StackNavigator, OrderStackNavigator } from "./StackNavigator";
+import { MainStackNavigator, StackNavigator, OrderStackNavigator } from "./stackNavigator";
 
 const Tab = createBottomTabNavigator();
 

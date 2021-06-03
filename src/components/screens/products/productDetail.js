@@ -1,7 +1,7 @@
 import color from 'color';
 import React, { useEffect, useState } from 'react';
 import { Text, View, Image, StyleSheet } from 'react-native';
-import manager from '../../../service/baseservice';
+import manager from '../../../../service/baseservice';
 
 
 
@@ -30,7 +30,7 @@ function ProductDetail({ navigation, route }) {
 
       <View style={styles.container}>
 
-      <Image source={require("../../../assets/box.png")} 
+      <Image source={require("../../../../assets/box.png")} 
       style={{ width: 150, height: 150 }}/>
 
         <Text style={{ margin: 5, fontSize: 25, color: "#FFFFFF", fontFamily: "Roboto" }}>

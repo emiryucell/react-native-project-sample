@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { Icon, ListItem } from "react-native-elements";
-import { PhoneHeight, PhoneWidth } from "../../../environment/config";
-import manager from '../../../service/baseservice';
+import { PhoneHeight, PhoneWidth } from "../../../../environment/config";
+import manager from '../../../../service/baseservice';
 
 
 
