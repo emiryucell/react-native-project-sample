@@ -25,7 +25,7 @@ function ProductDetail({ navigation, route }) {
 
 
   return (
-    //buraya ortak resim eklenebilir
+  
     <View style={{ flex: 1 }}>
 
       <View style={styles.container}>

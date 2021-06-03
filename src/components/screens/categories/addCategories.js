@@ -21,8 +21,10 @@ const send = () => {
 
 
 return (
+
+  <View style={{flex:1,flexDirection:"column",justifyContent:"center",alignItems:"center",backgroundColor:"#6fa3f7"}}>  
     <View style={styles.container}>
-        <View style={styles.dummy}></View>
+      
        <View style={styles.inputs}>
            <Input 
             placeholder='Category name' 
@@ -41,24 +43,26 @@ return (
             onChangeText={value => setDescription(value)}
             />  
         </View>
-
+     <View>
         <TouchableOpacity  onPress={() => send()} style={styles.addCategoryButton} >
             <Text style={styles.addCategoryText}>ADD</Text>
             </TouchableOpacity>
             
-            <View style={styles.dummy}></View>
+      </View>
+     </View>
     </View>
 )
 }
 const styles = StyleSheet.create({
     container: {
-      flex: 2,
       flexDirection:"column",
       backgroundColor: "#6fa3f7",
       alignItems: 'center',
-      justifyContent:"space-evenly",
-    },
-    dummy:{flex:5
+      justifyContent:"center",
+    
+      
+      
+    
     },
      inputs:{
         flex: 1,
