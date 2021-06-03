@@ -21,7 +21,9 @@ function UpdateCategories ({route, navigation }) {
     useEffect(() => {
 
         fillData();
-       
+       setCategoryName(itemName);
+       setDescriptionName(itemDescription);
+
       }, [])
 
 
