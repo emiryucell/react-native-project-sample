@@ -15,7 +15,7 @@ function UpdateCategories({ route, navigation }) {
 
     const update = () => {
 
-        manager.put('api/categories', { name: categoryName, description: descriptionName }, itemId)
+        manager.put('api/categories/', itemId, { name: categoryName, description: descriptionName })
             .then((res) => {
                 navigation.push('Categories');
                 alert('Category update done!');
