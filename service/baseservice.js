@@ -43,7 +43,7 @@ const manager = {
             body: JSON.stringify(data)
         };
 
-        await fetch('https://northwind.vercel.app/api/categories/'+itemId, requestOptions)
+        await fetch(config.BASE_URL+ url +itemId, requestOptions)
         .then(response => response.json())
         .then(data => console.log(data));
         
@@ -54,7 +54,7 @@ const manager = {
             method: 'DELETE',
             body: JSON.stringify({ id: id })
           };
-          await  fetch('https://northwind.vercel.app/api/products/' + id, requestoptions)
+          await  fetch(config.BASE_URL+ url + id, requestoptions)
           .then((res) => res.json())
           .then((data) => {
 
