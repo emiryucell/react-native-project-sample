@@ -55,7 +55,7 @@ function UpdateCategories({ route, navigation }) {
                 inputContainerStyle={{ borderColor: "white" }}
                 inputStyle={{ 'color': 'white' }}
                 onChangeText={value => setCategoryName(value)}
-                defaultValue={JSON.stringify(itemName)}
+                defaultValue={JSON.parse(JSON.stringify(itemName))}
 
             /></View>
 
@@ -65,7 +65,7 @@ function UpdateCategories({ route, navigation }) {
                 inputContainerStyle={{ borderColor: "white" }}
                 inputStyle={{ 'color': 'white' }}
                 onChangeText={value => setDescriptionName(value)}
-                defaultValue={JSON.stringify(itemDescription)}
+                defaultValue={JSON.parse(JSON.stringify(itemDescription))}
 
             />  </View>
             <TouchableOpacity onPress={() => update()} style={styles.updateCategoryButton} >
