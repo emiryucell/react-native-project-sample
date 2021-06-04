@@ -47,6 +47,18 @@ const manager = {
         .then(response => response.json())
         .then(data => console.log(data));
         
+    },
+
+    delete:async(url,id) => {
+        let requestoptions = {
+            method: 'DELETE',
+            body: JSON.stringify({ id: id })
+          };
+          await  fetch('https://northwind.vercel.app/api/products/' + id, requestoptions)
+          .then((res) => res.json())
+          .then((data) => {
+
+          })
     }
 
 }

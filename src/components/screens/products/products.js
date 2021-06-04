@@ -29,20 +29,14 @@ function Products({ navigation }) {
 
 
   }
-
-  const deleteProduct = (id) => {
-    //HTTP DELETE
-    let requestoptions = {
-      method: 'DELETE',
-      body: JSON.stringify({ id: id })
-    }
-    fetch('https://northwind.vercel.app/api/products/' + id, requestoptions)
-      .then((res) => res.json())
-      .then((data) => {
-
+  const deleted = (id) => {
+    manager.delete("api/products/",id)
+      .then((data)=> {
         fillData();
       })
+
   }
+  
 
 
   return (
@@ -71,7 +65,7 @@ function Products({ navigation }) {
                 </ListItem.Content>
                 <ListItem.Content style={{ flex: 1 }} >
 
-                  <TouchableOpacity onPress={() => deleteProduct(item.id)} style={styles.deleteButton}>
+                  <TouchableOpacity onPress={() => deleted(item.id)} style={styles.deleteButton}>
                     <Text style={{ color: "#367ff5" ,fontWeight: "bold"}}>Delete</Text>
                   </TouchableOpacity>
                 </ListItem.Content>
