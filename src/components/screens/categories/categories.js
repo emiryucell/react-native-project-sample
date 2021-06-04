@@ -33,17 +33,12 @@ function Categories({ navigation }) {
   }
 
   //DELETE METHOD
-  const deleteCategories = (id) => {
-    let requestoptions = {
-      method: 'DELETE',
-      body: JSON.stringify({ id: id })
-    }
-    fetch('https://northwind.vercel.app/api/categories/' + id, requestoptions)
-      .then((res) => res.json())
-      .then((data) => {
-
+  const deleted = (id) => {
+    manager.delete("api/categories/",id)
+      .then((data)=> {
         fillData();
       })
+
   }
 
 
@@ -68,7 +63,7 @@ function Categories({ navigation }) {
                   </ListItem.Content>
                   <View style={{ flex: 2, flexDirection: "row" }}>
                     <ListItem.Content style={{ flex: 1 }} >
-                      <Icon name="delete" color="white" onPress={() => deleteCategories(item.id)} />
+                      <Icon name="delete" color="white" onPress={() => deleted(item.id)} />
                     </ListItem.Content>
 
                     <ListItem.Content style={{ flex: 1 }} >
