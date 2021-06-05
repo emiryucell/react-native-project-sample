@@ -46,31 +46,45 @@ function UpdateCategories({ route, navigation }) {
             })
     }
 
+    const error = () => {
+        if(categoryName.length < 1) {
+            alert('Category name cannot be empty!');
+         }
+         else if (descriptionName.length < 1) {
+             alert("Description cannot be empty!")
+         }
+         else {
+             update();
+         }
+      }
+
     return (
         <View style={styles.container}>
             <View>
-            <Text style={styles.categoryText}>Update the category here</Text>
-        </View>
+                <Text style={styles.categoryText}>Update the category here</Text>
+            </View>
             <View>
-            <View style={styles.inputs}> <Input
-                placeholder='Category name'
-                placeholderTextColor="white"
-                inputContainerStyle={{ borderColor: "white" }}
-                inputStyle={{ 'color': 'white' }}
-                onChangeText={value => setCategoryName(value)}
-                defaultValue={JSON.parse(JSON.stringify(itemName))}
+                <View style={styles.inputs}> 
+                    <Input
+                        placeholder='Category name'
+                        placeholderTextColor="white"
+                        inputContainerStyle={{ borderColor: "white" }}
+                        inputStyle={{ 'color': 'white' }}
+                        onChangeText={value => setCategoryName(value)}
+                        defaultValue={JSON.parse(JSON.stringify(itemName))}
+                    />
+                </View>
 
-            /></View>
-
-            <View style={styles.inputs}> <Input
-                placeholder='Description'
-                placeholderTextColor="white"
-                inputContainerStyle={{ borderColor: "white" }}
-                inputStyle={{ 'color': 'white' }}
-                onChangeText={value => setDescriptionName(value)}
-                defaultValue={JSON.parse(JSON.stringify(itemDescription))}
-
-            />  </View>
+            <View style={styles.inputs}>
+                <Input
+                    placeholder='Description'
+                    placeholderTextColor="white"
+                    inputContainerStyle={{ borderColor: "white" }}
+                    inputStyle={{ 'color': 'white' }}
+                    onChangeText={value => setDescriptionName(value)}
+                    defaultValue={JSON.parse(JSON.stringify(itemDescription))}
+                /> 
+            </View>
             <TouchableOpacity onPress={() => error()} style={styles.updateCategoryButton} >
                 <Text style={styles.updateCategoryText}>UPDATE</Text>
             </TouchableOpacity>
