@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { ScrollView, StyleSheet, View } from 'react-native';
+import { ScrollView, View } from 'react-native';
 import { ListItem } from "react-native-elements";
 import manager from '../../../../service/baseservice';
+import {globalStyles} from "../../styles/global";
 
 function Orders({ navigation }) {
 
@@ -24,20 +25,18 @@ function Orders({ navigation }) {
           
    })
   }
-  
-
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#6fa3f7'}}>
+      <View style={globalStyles.container}>
         <ScrollView>
             {
             orders.map((item)=> (
 
-                <ListItem containerStyle={{backgroundColor:"#6fa3f7"}}>
-                    <ListItem.Content style={styles.orders}>
-                        <ListItem.Title style={{color:"white"}}>Order ID: {item.id}</ListItem.Title>
-                        <ListItem.Subtitle style={{color:"white"}}>Costumer ID: {item.customerId}</ListItem.Subtitle>
-                        <ListItem.Subtitle style={{color:"white"}}>Order Ship Name: {item.shipName}</ListItem.Subtitle> 
-                        <ListItem.Subtitle style={{color:"white"}}>Order Date: {item.orderDate}</ListItem.Subtitle> 
+                <ListItem containerStyle={globalStyles.container}>
+                    <ListItem.Content style={globalStyles.orders}>
+                        <ListItem.Title style={globalStyles.text}>Order ID: {item.id}</ListItem.Title>
+                        <ListItem.Subtitle style={globalStyles.text}>Costumer ID: {item.customerId}</ListItem.Subtitle>
+                        <ListItem.Subtitle style={globalStyles.text}>Order Ship Name: {item.shipName}</ListItem.Subtitle> 
+                        <ListItem.Subtitle style={globalStyles.text}>Order Date: {item.orderDate}</ListItem.Subtitle> 
                       </ListItem.Content>
                 </ListItem>
     
@@ -47,19 +46,4 @@ function Orders({ navigation }) {
       </View>
     );
   }
-
-  const styles = StyleSheet.create({
-    
-    orders:{
-      flex:5,
-      padding:5,
-      borderRadius:10,
-      backgroundColor:"#367ff5",
-      borderWidth:5,
-      borderColor:"#3d86fc"
-    },
-   
-  });
-
-
   export default Orders;
