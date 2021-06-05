@@ -49,6 +49,9 @@ function UpdateCategories({ route, navigation }) {
     return (
         <View style={styles.container}>
             <View>
+            <Text style={styles.categoryText}>Update the category here</Text>
+        </View>
+            <View>
             <View style={styles.inputs}> <Input
                 placeholder='Category name'
                 placeholderTextColor="white"
@@ -68,7 +71,7 @@ function UpdateCategories({ route, navigation }) {
                 defaultValue={JSON.parse(JSON.stringify(itemDescription))}
 
             />  </View>
-            <TouchableOpacity onPress={() => update()} style={styles.updateCategoryButton} >
+            <TouchableOpacity onPress={() => error()} style={styles.updateCategoryButton} >
                 <Text style={styles.updateCategoryText}>UPDATE</Text>
             </TouchableOpacity>
             </View>
@@ -82,11 +85,15 @@ const styles = StyleSheet.create({
         flex: 2,
         flexDirection: "column",
         backgroundColor: '#6fa3f7',
-        alignItems: 'center',
-        justifyContent: "space-evenly",
+        alignItems: 'center',   
     },
- 
-
+    categoryText:{
+        flex:1,
+        color:"white",
+        marginTop:50,
+        fontSize:18,
+        marginBottom:20       
+    },
     inputs: {
         flex: 1,
         backgroundColor: "#6fa3f7",
@@ -94,25 +101,21 @@ const styles = StyleSheet.create({
         borderRadius: 5,
         borderWidth: 5,
         margin: 5,
-
-    }
-    ,
+    },
     updateCategoryButton: {
         textAlign: "center",
         flex: 1,
-
         backgroundColor: "#6fa3f7",
         borderRadius: 10,
         borderColor: "#367ff5",
-        borderWidth: 5
-
+        borderWidth: 5,
+        marginTop:5
     },
     updateCategoryText: {
         color: "white",
         alignItems: "center",
         padding: 10,
     }
-
 });
 
 export default UpdateCategories;

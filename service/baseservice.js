@@ -35,7 +35,7 @@ const manager = {
         return resultdata;
 
     },
-    put:async(url,data,itemId)=>{
+    put:async(url,itemId,data)=>{
         let resultdata;
         const requestOptions = {
             method: 'PUT',
