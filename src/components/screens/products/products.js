@@ -19,7 +19,7 @@ function Products({ navigation }) {
       .then((data) => {
         setProducts(data);
       })}
-  const deleted = (id) => {
+  const deleteData = (id) => {
     manager.delete("api/products/",id)
       .then((data)=> {
         fillData();
@@ -51,7 +51,7 @@ function Products({ navigation }) {
                 </ListItem.Content>
                 <ListItem.Content>
 
-                  <TouchableOpacity onPress={() => deleted(item.id)} style={globalStyles.deleteButton}>
+                  <TouchableOpacity onPress={() => deleteData(item.id)} style={globalStyles.deleteButton}>
                     <Text style={globalStyles.productsButtonText}>Delete</Text>
                   </TouchableOpacity>
                 </ListItem.Content>

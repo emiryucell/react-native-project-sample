@@ -19,7 +19,7 @@ function Categories({ navigation }) {
         setCategories(data);
       })
   }
-  const deleted = (id) => {
+  const deleteData = (id) => {
 
     manager.delete("api/categories/", id)
       .then((data) => {
@@ -45,7 +45,7 @@ function Categories({ navigation }) {
           </ListItem.Content>
           <View style={globalStyles.categoriesIconsContainer}>
                     <ListItem.Content>
-                      <Icon name="delete" color="white" onPress={() => deleted(item.id)} />
+                      <Icon name="delete" color="white" onPress={() => deleteData(item.id)} />
                     </ListItem.Content>
                     <ListItem.Content>
                       <Icon name="update" color="white" onPress={() => navigation.push('Update Categories', {
