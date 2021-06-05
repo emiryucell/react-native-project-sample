@@ -8,14 +8,10 @@ import addCategories from '../screens/categories/addCategories';
 import updateCategories from "../screens/categories/updateCategories";
 import ProductDetail from "../screens/products/productDetail";
 
+import navigationOptions from "../header/header"
+
 const Stack = createStackNavigator();
 
-const navigationOptions = {
-  headerTitleStyle: { alignSelf: 'center' },
-  headerStyle: { backgroundColor: "#9AC4F8" },
-  headerTintColor: "white",
-  headerBackTitle: "Back",
-}
 
 const MainStackNavigator = () => {
   return (

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import { Input } from 'react-native-elements';
 import manager from '../../../../service/baseservice';
+
 import { globalStyles } from "../../styles/global";
 
 
@@ -18,6 +19,17 @@ const Fetchpostsample = ({ navigation }) => {
                 alert('Category adding done!');
             })
     }
+     const error = () => {
+    if(categoryName.length < 1) {
+        alert('Category name cannot be empty!');
+     }
+     else if (description.length < 1) {
+         alert("Description cannot be empty!")
+     }
+     else {
+         send();
+     }
+  }
     return (
         <View style={globalStyles.container}>
             <View>
@@ -40,7 +52,7 @@ const Fetchpostsample = ({ navigation }) => {
                     />
                 </View>
                 <View>
-                    <TouchableOpacity onPress={() => send()} style={globalStyles.addButton} >
+                    <TouchableOpacity onPress={() => error()} style={globalStyles.addButton} >
                         <Text style={globalStyles.addText}>ADD</Text>
                     </TouchableOpacity>
                 </View>
@@ -50,4 +62,5 @@ const Fetchpostsample = ({ navigation }) => {
 }
 
 export default Fetchpostsample;
+
 
