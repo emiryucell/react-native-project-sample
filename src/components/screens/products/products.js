@@ -7,28 +7,23 @@ import {globalStyles} from "../../styles/global";
 
 function Products({ navigation }) {
 
-
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
 
     fillData();
-
   }, [])
 
   const fillData = () => {
     manager.get("api/products/")
       .then((data) => {
         setProducts(data);
-
-      })
-  }
+      })}
   const deleted = (id) => {
     manager.delete("api/products/",id)
       .then((data)=> {
         fillData();
-      })
-  }
+      })}
   return (
   <View style={globalStyles.container}>
 
