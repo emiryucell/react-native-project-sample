@@ -18,12 +18,27 @@ const send = () => {
         alert('Category adding done!');
     })
 }
-
+ const error = () => {
+    if(categoryName.length < 1) {
+        alert('Category name cannot be empty!');
+     }
+     else if (description.length < 1) {
+         alert("Description cannot be empty!")
+     }
+     else {
+         send();
+     }
+  }
+ 
 
 return (
 
-  <View style={{flex:1,flexDirection:"column",justifyContent:"center",alignItems:"center",backgroundColor:"#6fa3f7"}}>  
+  <View style={{flex:1,flexDirection:"column",alignItems:"center",backgroundColor:"#6fa3f7"}}>  
     <View style={styles.container}>
+
+        <View>
+            <Text style={styles.categoryText}>Add your new category here</Text>
+        </View>
       
        <View style={styles.inputs}>
            <Input 
@@ -44,7 +59,7 @@ return (
             />  
         </View>
      <View>
-        <TouchableOpacity  onPress={() => send()} style={styles.addCategoryButton} >
+        <TouchableOpacity  onPress={() => error()} style={styles.addCategoryButton} >
             <Text style={styles.addCategoryText}>ADD</Text>
             </TouchableOpacity>
             
@@ -59,12 +74,16 @@ const styles = StyleSheet.create({
       backgroundColor: "#6fa3f7",
       alignItems: 'center',
       justifyContent:"center",
-    
-      
-      
-    
     },
-     inputs:{
+    categoryText:{
+        flex:1,
+        color:"white",
+        marginTop:50,
+        fontSize:17,
+        marginBottom:20
+        
+    },
+    inputs:{
         flex: 1,
         backgroundColor:"#6fa3f7",
         borderColor:"#367ff5",
