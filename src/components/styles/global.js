@@ -40,6 +40,14 @@ export const globalStyles = StyleSheet.create({
       borderBottomRightRadius: 10,
       borderColor:"#367ff5",
       borderWidth:2,
-    }
+    },
+    orders:{
+        flex:5,
+        padding:5,
+        borderRadius:10,
+        backgroundColor:"#367ff5",
+        borderWidth:5,
+        borderColor:"#3d86fc"
+      },
   });
   
