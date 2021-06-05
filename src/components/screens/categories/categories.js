@@ -32,7 +32,6 @@ function Categories({ navigation }) {
       })
   }
 
-  //DELETE METHOD
   const deleted = (id) => {
     manager.delete("api/categories/",id)
       .then((data)=> {
